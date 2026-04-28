@@ -1,3 +1,7 @@
+provider "aws" {
+  region = var.region
+}
+
 data "aws_ami" "app_ami" {
   most_recent = true
 
@@ -17,7 +21,7 @@ data "aws_ami" "app_ami" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.app_ami.id
   instance_type = var.instance_type
-  region = var.region
+  associate_public_ip_address = false
 
   tags = {
     Name = "HelloWorld"
