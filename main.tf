@@ -17,7 +17,7 @@ data "aws_ami" "app_ami" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.app_ami.id
   instance_type = var.instance_type
-  zone = var.instance_zone
+  zone = var.region
 
   tags = {
     Name = "HelloWorld"
