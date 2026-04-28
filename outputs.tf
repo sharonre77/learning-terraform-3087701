@@ -1,7 +1,7 @@
-output "instance_ami" {
-  value = aws_instance.web.ami
+output "instance_id" {
+  value = aws_instance.web.id
 }
 
-output "instance_arn" {
-  value = aws_instance.web.arn
+output "private_ip" {
+  value = aws_instance.web.private_ip
 }
